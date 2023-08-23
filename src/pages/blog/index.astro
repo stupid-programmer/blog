@@ -5,6 +5,8 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+const allPosts = await Astro.glob('../../../src/content/blog/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -83,12 +85,22 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
+
+			.display-inline {
+				display: inline-block;
+				margin: 0 1em 1em 0;
+			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section>
+				<div>
+					{tags.map((tag) => (
+					  <p class="display-inline"><a href={`/blog/tags/${tag}`}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</a></p>
+					))}
+				  </div>
 				<ul>
 					{
 						posts.map((post) => (

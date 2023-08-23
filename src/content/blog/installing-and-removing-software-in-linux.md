@@ -3,6 +3,8 @@ title: 'Installing and removing software in Linux'
 description: 'As per the title, a cheatsheet for installing and removing packages from Linux'
 pubDate: 'Aug 23 2023'
 heroImage: '/blog-placeholder-5.jpg'
+url: 'installing-and-removing-software-in-linux'
+tags: ['linux']
 ---
 
 Search for package to see if its available

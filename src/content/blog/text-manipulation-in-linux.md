@@ -3,6 +3,8 @@ title: 'Text manipulation in Linux'
 description: 'Manipulating files in Linux, cat, less, search, filter and move.'
 pubDate: 'Aug 23 2023'
 heroImage: '/blog-placeholder-4.jpg'
+url: 'text-manipulation-in-linux'
+tags: ['linux']
 ---
 
 Display entire file

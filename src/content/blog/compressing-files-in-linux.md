@@ -3,6 +3,8 @@ title: 'Compressing files in Linux'
 description: 'Tar, Gzip, Gunzip'
 pubDate: 'Aug 23 2023'
 heroImage: '/blog-placeholder-2.jpg'
+url: 'compressing-files-in-linux'
+tags: ['linux']
 ---
 
 ### Compressing files
