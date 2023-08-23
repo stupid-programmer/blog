@@ -4,10 +4,13 @@
 ## To get running its nice and simple
 
 ```
-To get running clone down.
-cd into directory.
-run: npm install.
-run: npm run dev
+To get running clone down. cd into directory then run the following.
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
+
 ```
 
 ## 🧞 Commands
