@@ -43,3 +43,14 @@ To move out from the tar extension
 ```
 tar -xvf my_files.tar
 ```
+
+To zip a directory 
+```
+zip -r folder_name.zip folder_name 
+```
+
+
+To unzip a .zip file to same directory
+```
+unzip file_name.zip
+```
