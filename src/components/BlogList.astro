@@ -7,8 +7,8 @@ const { posts } = Astro.props;
         // TODO: Work out if its required to create a type that matches the collection type in config.ts
         posts.map((post) => (
             <li>
-                <a href={`/blog/blog/${post.data.url}/`}>
-                    <img width={720} height={360} src={'/blog/' + post.data.heroImage} alt="" />
+                <a href={`/blog/${post.data.url}/`}>
+                    <img width={720} height={360} src={post.data.heroImage} alt="" />
                     <h4 class="title">{post.data.title}</h4>
                     <p class="date">
                         <FormattedDate date={new Date(post.data.pubDate)} />

@@ -39,7 +39,7 @@ const displayPosts = posts.slice(0, 3);
 
 			<h4>Projects</h4>
 			<p>
-				If I remember to keep the page updated some projects and tinkerings will be over on the <a href="/blog/projects">projects page</a>.
+				If I remember to keep the page updated some projects and tinkerings will be over on the <a href="/projects">projects page</a>.
 				These are just some things that I find interesting to work on in my own time, normally fragmented peices of code that are interesting 
 				to me at that point.
 			</p>
@@ -55,8 +55,8 @@ const displayPosts = posts.slice(0, 3);
 					{
 						displayPosts.map((post) => (
 							<div>
-								<a href={`/blog/blog/${post.slug}/`}>
-									<img width={720} height={360} src={'/blog/' + post.data.heroImage} alt="" />
+								<a href={`/blog/${post.slug}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 								</a>
 							</div>

@@ -31,7 +31,7 @@ const posts = (await getCollection('blog')).sort(
 			<section>
 				<div>
 					{tags.map((tag) => (
-					  <p class="display-inline"><a href={`/blog/tags/${tag}`}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</a></p>
+					  <p class="display-inline"><a href={`/tags/${tag}`}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</a></p>
 					))}
 				  </div>
 				  <BlogList posts={posts} />

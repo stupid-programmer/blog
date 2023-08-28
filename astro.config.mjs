@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://stupid-programmer.github.io',
-	base: '/blog',
+	site: 'https://thestupidprogrammer.com',
 	integrations: [mdx(), sitemap()],
 });
