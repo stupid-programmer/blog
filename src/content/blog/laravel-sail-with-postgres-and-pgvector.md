@@ -15,6 +15,8 @@ This will install postgres (for database), mailpit (for catching emails) and sel
 
 See this having somewhere to put things like this is paying off already.
 
+[Repo here](https://github.com/stupid-programmer/laravel_sail_pgvector_example)
+
 ### Setting up pgvector # Easy Method
 
 First we need to publish the docker files as per the documentation run the following, after you have run the `./vendor/bin/sail up` command to set the project up.
