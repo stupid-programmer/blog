@@ -3,8 +3,8 @@ title: 'Simple format to Geojson with GDAL.'
 description: 'This is how I went about formatting some geojson to enable use in a map.'
 pubDate: 'Sep 30 2023'
 heroImage: '/blog-placeholder-5.jpg'
-url: 'simle-format-geojson-with-gdal'
-tags: ['laravel']
+url: 'simple-format-geojson-with-gdal'
+tags: ['linux']
 ---
 
 ### What is this. 
@@ -42,3 +42,9 @@ You can then add that output to your google map with something like the followin
 map.data.addGeoJson(data);
 ```
 
+If you need to dump it to a sql file the following command.
+```
+ogr2ogr -f "PGDump" -t_srs EPSG:4326 -s_srs EPSG:4326 -nlt PROMOTE_TO_MULTI -nln table_name output.sql input.geojson
+```
+
+This can then be imported into a sql database.
