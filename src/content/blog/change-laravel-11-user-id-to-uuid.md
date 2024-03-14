@@ -3,7 +3,7 @@ title: "Change Laravel 11 User ID to UUID"
 description: "How to change the Laravel 11 user table id to a UUID"
 pubDate: "Mar 14 2024"
 heroImage: "/blog-placeholder-2.jpg"
-url: "change-laravel-11-user-id-to-uuid.md"
+url: "change-laravel-11-user-id-to-uuid"
 tags: ["laravel"]
 ---
 
