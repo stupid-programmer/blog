@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import BlogList from '../../components/BlogList.astro';
+import Archived from '../../components/Archived.astro' 
 
 const allPosts = await Astro.glob('../../../src/content/blog/*.md');
 const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
@@ -18,23 +19,13 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			.display-inline {
-				display: inline-block;
-				margin: 0 1em 1em 0;
-			}
-		</style>
 	</head>
 	<body>
+		<Archived />
 		<Header />
-		<main>
+		<main class="max-w-5xl mx-auto">
 			<section>
-				<div>
-					{tags.map((tag) => (
-					  <p class="display-inline"><a href={`/tags/${tag}`}>{tag.charAt(0).toUpperCase() + tag.slice(1)}</a></p>
-					))}
-				  </div>
-				  <BlogList posts={posts} />
+				<BlogList posts={posts} />
 			</section>
 		</main>
 		<Footer />

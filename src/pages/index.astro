@@ -4,6 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
+import  IntroCard from '../components/IntroCard.astro'
+import LatestNote from '../components/LatestNote.astro'
+import Now from '../components/Now.astro'
+import TechStack from '../components/TechStack.astro'
+import Projects from '../components/Projects.astro'
+import Experience from '../components/Experience.astro'
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -16,54 +22,52 @@ const displayPosts = posts.slice(0, 3);
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>&#128034; Hello, Bots!</h1>
 
-			<h4 class="heading-padding">Who am I?</h4>
-			<p>
-				You know those genius level programmers? Yea thats not me. Good for them 
-				they make cool stuff we can all use but I'm the opposite, this stuff is difficult.
-			</p>
+	 <body class="bg-neutral-950">
+		<main class="text-gray-300 background-image">
+			<div class="max-w-6xl mx-auto grid md:grid-cols-4 lg:h-screen gap-2 py-12 lg:px-0 px-6">
+				<div class="col-span-4 lg:col-span-3">
+					<div class="flex flex-col md:h-full gap-2">
 
-			<h4 >What is this site?</h4>
-			<p>
-				This 'blog' if you can call it that is just somewhere to store problems and issues I've come across and found ways
-				to solve for future reference, as well as somewhere to put notes of things I'm currently looking at and exploring.
-			</p>
-			<p>
-				Is this the default Astro blog template? Why yes it is, maybe in the future this will be tweaked
-				but for now the requirement is just somewhere to store some notes that can be accessed from anywhere.
-			</p>
+						<div class="basis-3/6 bg-neutral-900 rounded border border-gray-800 text-xs">
+							<IntroCard/>
+						</div>
 
-			<h4>Projects</h4>
-			<p>
-				If I remember to keep the page updated some projects and tinkerings will be over on the <a href="/projects">projects page</a>.
-				These are just some things that I find interesting to work on in my own time, normally fragmented peices of code that are interesting 
-				to me at that point.
-			</p>
-
-			<h4>Why are you here?</h4>
-			<p>
-				I'm not sure why your on this site, why your reading this page or why you've read this far 
-				but hi and if you want to chat I will leave a link somewhere to get in contact.
-			</p>
-
-			<div>
-				<h4 class="heading-padding">Latest Musings</h4>
-					{
-						displayPosts.map((post) => (
-							<div>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
+						<div class="flex flex-col md:flex-row basis-3/6 gap-2">
+							<div class="basis-1/4 bg-neutral-900 rounded border border-gray-800"><TechStack/></div>
+							<div class="flex flex-col md:flex-col basis-3/4 gap-2">
+								<a target="_blank" href="https://notes.thestupidprogrammer.com/Web+App+Security/API+Security/Mass+Assignment/Mass+Assignment">
+									<div class="text-gray-300 basis-1/2 bg-zinc-900	 rounded border border-gray-800 hover:border-orange-500">
+										<LatestNote />	
+									</div>
 								</a>
+								<div class="basis-3/4 flex flex-col md:flex-row gap-2">
+									<a target="_blank" class="basis-1/2 bg-neutral-900 rounded border border-gray-800 hover:border-orange-500 p-6 flex flex-col gap-2" href="https://www.youtube.com/@thestupidprogrammer">
+										<p class="mb-2 font-bold">Youtube</p>
+										<p class="mb-2 text-base">Random Portswigger labs I find intresting along with really bad audio.</p>	
+									</a>
+									<div class="basis-1/2 flex flex-col gap-2">
+										<div class="basis-1/2 bg-neutral-900 rounded border border-gray-800">
+											<div class="p-6">
+												<Now />
+											</div>
+										</div>
+										<a target="_blank" class="basis-1/2 bg-neutral-900 rounded border border-gray-800 hover:border-orange-500 flex items-center justify-start" href="https://notes.thestupidprogrammer.com">
+											<p class="lg:p-0 lg:pl-6 p-6">Notes - <span class="text-xs"> My ramblings and reminders.</span></p>	
+										</a>
+									</div>
+								</div>
 							</div>
-						))
-					}
+						</div>
+					</div>
+				</div>
+				<div class="col-span-4 lg:col-span-1">
+					<div class="flex flex-col h-full gap-2">
+						<div class="basis-2/4 bg-neutral-900 rounded border border-gray-800"><Projects /></div>
+						<div class="basis-2/4 bg-neutral-900 rounded border border-gray-800"><Experience /></div>
+					</div>
+				</div>
 			</div>
 		</main>
-		<Footer />
-	</body>
+	</body> 
 </html>

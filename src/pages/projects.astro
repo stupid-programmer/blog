@@ -1,22 +1,27 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+import Archived from '../components/Archived.astro';
 ---
 
+<Archived />
 <Layout
 	title="Projects"
 	description="Some projects I'm currently working on."
-	pubDate={new Date('August 22 2023')}
+	pubDate={new Date('August 1 2024')}
 >
 	<p>
 		These are some of the projects I'm working on, some I half did, some I finished most are useless but all were learning experiences. 
 	</p>
 
 	<p>
-		In progress: Laravel with vector database (Postgres with the pgvector extension) so it can be queried with embeddings a simple 'knowledge base' if you will.
+		Now: I'm working on quollect, it will be a simple quote collecting app built in Laravel for something to demo to peeps.
+	</p>
+
+	<p> 
+		Previous: 
 	</p>
 
 	<p>
-		Todo: Another project here, I need to have some more stuff of my own rather than work projects that can't be shown.
+		I need to have some more stuff of my own rather than work projects that can't be shown.
 	</p>
-
 </Layout>
